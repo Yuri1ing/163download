@@ -1,0 +1,32 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+/build/
+/dist/
+*.spec.bak
+.env
+.venv/
+venv/
+
+# ---- PyInstaller 输出（本地构建产物，不入库）----
+build/bk/
+build/
+
+# ---- Electron ----
+node_modules/
+electron/dist/
+electron/build/*.tmp
+
+# ---- 本机修复脚本 / 环境备份（不属于项目源码）----
+fix-git-submodule-path.ps1
+git-submodule.exe
+README-修复说明.md
+env-backup-*.txt
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store

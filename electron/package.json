@@ -1,0 +1,20 @@
+{
+  "name": "ncm-downloader",
+  "productName": "网易云音乐下载器",
+  "version": "3.0.0",
+  "description": "网易云音乐 MP3 下载器（Electron 内核）",
+  "main": "main.js",
+  "author": "local",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "pack": "node pack.js"
+  },
+  "devDependencies": {
+    "@electron/packager": "18.4.2",
+    "electron": "33.4.11"
+  },
+  "dependencies": {
+    "koffi": "^3.3.5"
+  }
+}

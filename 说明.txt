@@ -1,0 +1,26 @@
+网易云音乐下载器 · 源码
+========================
+运行成品见同级的「网易云下载器-成品」文件夹。
+
+目录
+  electron/        Electron 外壳（main.js 窗口与动画、preload.js 桥、backend_main.py 后端入口）
+  ncm/             下载引擎（api 签名 / core 下载打标签 / fallback 酷我兜底 / server 本地接口）
+  tools/           CDP 驱动与验证脚本
+  main.py          WebView2 版入口（旧）
+  main_qt.py       Qt 版入口（旧）
+  assets/ncm.ico   图标
+  screenshots/     界面截图
+  README.md        架构 / 打包命令 / 版本对照
+
+重新运行（开发）
+  1) 先有后端可执行文件：
+     python -m PyInstaller --onefile --console --name ncm_backend \
+       --add-data "<此目录>/ncm/web;ncm/web" --collect-submodules ncm electron/backend_main.py
+     把生成的 ncm_backend.exe 放到 electron/../dist/ 下（或 electron/dist/ 下）
+  2) cd electron && npm install       （Electron 镜像：ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/）
+  3) npm start
+
+重新打包
+  cd electron && npx electron-packager . "网易云音乐下载器" --platform=win32 --arch=x64 \
+    --out=../dist-electron --overwrite --icon=assets/ncm.ico \
+    --extra-resource=../dist/ncm_backend.exe
