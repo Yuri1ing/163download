@@ -159,3 +159,7 @@ cd electron && npx electron-packager . "网易云音乐下载器" --platform=win
 | v1.0 | Tkinter | 保留 `python main.py --tk` |
 | v2.x | WebView2（`msedge --app` / pywebview） | 保留 `python main.py` |
 | v3.0 | **Electron** | **当前主推**，`dist-electron/` |
+
+## 关于这个仓库
+
+本仓库原名 `163download`，最早由一句「网易云音乐下载器 Windows」的占位 README 建立，现在存放 v2.1 / v3.0 的完整源码。
